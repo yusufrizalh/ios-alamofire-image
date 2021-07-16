@@ -5,17 +5,40 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var artist = [[String:Any]]()
+    //var artist = [[String:Any]]()
+    var artist = Array<Results>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadDataArtist()
+        //loadDataArtist()
+        loadDataArtistModel()
         
         tableView.dataSource = self
         tableView.delegate = self
     }
+    
+    func loadDataArtistModel() {
+        Alamofire.request("http://itunes.apple.com/search?media=music&term=bollywood").responseJSON { (response) in
+            //print("Response: \(response)")
+            //print("Response value: \(response.result.value!)")
+                do {
+                    if (response.result.isSuccess) {
+                        //print("response.result \(response.result)")
+                        // print(response.value!)
+                        let result: ArtistResponseModel = try JSONDecoder().decode(ArtistResponseModel.self, from: response.data!)
+                        debugPrint(result)
+                        
+                        self.artist = result.results ?? []
+                        self.tableView.reloadData()
+                    }
+                } catch {
+                    
+                }
+            }
+    }
 
+    /*
     func loadDataArtist() {
         // membuat request dari alamofire
         Alamofire.request("http://itunes.apple.com/search?media=music&term=bollywood")
@@ -31,11 +54,34 @@ class ViewController: UIViewController {
                     }
                 }
             }
-    }
+    }*/
 
 }
 
 extension ViewController: UITableViewDataSource {
+    // menggunakan model
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return artist.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! MainTableViewCell
+        if (artist.count > 0) {
+            do {
+                let artistData = artist[indexPath.row]
+                cell.artistImageView.image = try UIImage(data: Data(contentsOf: URL(string: artistData.artworkUrl100) ?? URL(string: "http://www.google.com")!))
+                cell.artistName.text = artistData.artistName
+                cell.artistCountry.text = artistData.country
+                cell.trackName.text = artistData.trackName
+            } catch {
+                
+            }
+        }
+        return cell
+    }
+    
+    /*
+     // tidak menggunakan model
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         artist.count
     }
@@ -57,7 +103,7 @@ extension ViewController: UITableViewDataSource {
         }
         
         return cell
-    }
+    }*/
 }
 
 extension ViewController: UITableViewDelegate {

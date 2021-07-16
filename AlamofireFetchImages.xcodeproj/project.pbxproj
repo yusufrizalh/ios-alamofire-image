@@ -14,6 +14,7 @@
 		288BE7CE26A125B500D60E6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 288BE7CD26A125B500D60E6A /* Assets.xcassets */; };
 		288BE7D126A125B500D60E6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 288BE7CF26A125B500D60E6A /* LaunchScreen.storyboard */; };
 		288BE7D926A129B000D60E6A /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288BE7D826A129B000D60E6A /* MainTableViewCell.swift */; };
+		288BE7DE26A134B300D60E6A /* ArtistResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288BE7DD26A134B300D60E6A /* ArtistResponseModel.swift */; };
 		BC692EF1D6AAFEEDC42FFC13 /* Pods_AlamofireFetchImages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3967FB1ED2534B9866BF00B4 /* Pods_AlamofireFetchImages.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		288BE7D026A125B500D60E6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		288BE7D226A125B500D60E6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		288BE7D826A129B000D60E6A /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		288BE7DD26A134B300D60E6A /* ArtistResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistResponseModel.swift; sourceTree = "<group>"; };
 		3967FB1ED2534B9866BF00B4 /* Pods_AlamofireFetchImages.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlamofireFetchImages.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		39F0902F56384AE0F11C0D9E /* Pods-AlamofireFetchImages.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofireFetchImages.debug.xcconfig"; path = "Target Support Files/Pods-AlamofireFetchImages/Pods-AlamofireFetchImages.debug.xcconfig"; sourceTree = "<group>"; };
 		4FD40B500F177A2EF978A20A /* Pods-AlamofireFetchImages.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofireFetchImages.release.xcconfig"; path = "Target Support Files/Pods-AlamofireFetchImages/Pods-AlamofireFetchImages.release.xcconfig"; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 		288BE7C326A125B400D60E6A /* AlamofireFetchImages */ = {
 			isa = PBXGroup;
 			children = (
+				288BE7DD26A134B300D60E6A /* ArtistResponseModel.swift */,
 				288BE7C426A125B400D60E6A /* AppDelegate.swift */,
 				288BE7C626A125B400D60E6A /* SceneDelegate.swift */,
 				288BE7C826A125B400D60E6A /* ViewController.swift */,
@@ -209,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				288BE7C926A125B400D60E6A /* ViewController.swift in Sources */,
+				288BE7DE26A134B300D60E6A /* ArtistResponseModel.swift in Sources */,
 				288BE7C526A125B400D60E6A /* AppDelegate.swift in Sources */,
 				288BE7D926A129B000D60E6A /* MainTableViewCell.swift in Sources */,
 				288BE7C726A125B400D60E6A /* SceneDelegate.swift in Sources */,
