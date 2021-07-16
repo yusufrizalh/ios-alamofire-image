@@ -1,0 +1,6 @@
+framework module Pods_AlamofireFetchImages {
+  umbrella header "Pods-AlamofireFetchImages-umbrella.h"
+
+  export *
+  module * { export * }
+}
